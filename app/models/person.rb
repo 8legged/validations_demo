@@ -1,2 +1,15 @@
 class Person < ActiveRecord::Base
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :terms, acceptance: true
+  validates :email, presence: true,
+                    uniqueness: true
+  validates :age, presence: true,
+
+#                  numericality: { greater_than: 17,
+#                                }
+
+                  numericality: true,
+                  inclusion: { in: 18..85,
+                  message: "must be between 18 and 85"}
 end

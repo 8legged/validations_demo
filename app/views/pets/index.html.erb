@@ -1,0 +1,36 @@
+<h1>Pets</h1>
+<table>
+  <tr>
+    <td>
+      <%= link_to 'New Pet', new_pet_path %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    </td>
+  <th>
+    Name
+  </th>
+  <th>
+    Color
+  </th>
+  </tr>
+
+    <% @pet.each do |pet| %>
+
+  <tr>
+    <td>
+    </td>
+    <td>
+    <%= pet.name %>
+    </td>
+    <td>
+    <%= pet.color %>
+    </td>
+    <td>
+   <%= link_to 'Edit', edit_pet_path(pet) %> |
+   <%= link_to 'Delete', pet_path(pet), method: :delete , data: {confirm: 'Are you sure you want to delete this pet?'} %>
+    </td>
+  </tr>
+<% end %>
+</table>

@@ -10,14 +10,14 @@
   </tr>
 <% @people.each do |person| %>
   <tr>
-    <th><%= person.first_name %></th>
-    <th><%= person.last_name %></th>
-    <th><%= person.email %></th>
-    <th><%= person.age %></th>
-    <th>
+    <td><%= person.first_name %></td>
+    <td><%= person.last_name %></td>
+    <td><%= person.email %></td>
+    <td><%= person.age %></td>
+    <td>
       <%= link_to 'Edit', edit_person_path(person) %> |
       <%= link_to 'Delete', person_path(person), method: :delete, data: {confirm: 'Are you sure?'} %>
-    </th>
+    </td>
   </tr>
 <% end %>
 </table>

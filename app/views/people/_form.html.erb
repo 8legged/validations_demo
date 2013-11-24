@@ -1,3 +1,8 @@
+<% @person.errors.full_messages.each do |msg| %>
+  <div class="field_with_errors"><%= msg %>
+  </div>
+<% end %>
+
 <%= form_for @person do |f| %>
   <div>
     <%= f.label :first_name %>
@@ -15,6 +20,12 @@
     <%= f.label :age %>
     <%= f.text_field :age %>
   </div>
+  <% if @person.new_record? %>
+  <div>
+    <%= f.label :terms, "Accepts the terms" %>
+    <%= f.check_box :terms %>
+  </div>
+  <% end %>
   <div>
     <%= f.submit %>
   </div>
