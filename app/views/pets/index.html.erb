@@ -28,8 +28,9 @@
     <%= pet.color %>
     </td>
     <td>
-   <%= link_to 'Edit', edit_pet_path(pet) %> |
-   <%= link_to 'Delete', pet_path(pet), method: :delete , data: {confirm: 'Are you sure you want to delete this pet?'} %>
+   <%= link_to 'Edit', edit_pet_path(pet) %>
+<!--   <%#= link_to 'Delete', pet_path(pet), method: :delete , data: {confirm: 'Are you sure you want to delete this pet?'} %>
+-->
     </td>
   </tr>
 <% end %>
